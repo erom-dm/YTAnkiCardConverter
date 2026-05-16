@@ -1,0 +1,818 @@
+FetchedTranscript(
+                     snippets=[   
+                             FetchedTranscriptSnippet(text='gebruiken '
+                                                           'ze '
+                                                           'diezelfde '
+                                                           'dingen '
+                                                           'weer '
+                                                           'tegen',
+                                                      start=298.08,
+                                                      duration=2.36),
+                             FetchedTranscriptSnippet(text='hen.',
+                                                      start=299.479,
+                                                      duration=3.521),
+                             FetchedTranscriptSnippet(text='En '
+                                                           'dus '
+                                                           'gebruiken '
+                                                           'ze '
+                                                           'in '
+                                                           'Oekraïne '
+                                                           'soms '
+                                                           'ook',
+                                                      start=300.44,
+                                                      duration=4.92),
+                             FetchedTranscriptSnippet(text='hele '
+                                                           'simpele '
+                                                           'dingen, '
+                                                           'zoals '
+                                                           'het '
+                                                           'spannen',
+                                                      start=303.0,
+                                                      duration=5.0),
+                             FetchedTranscriptSnippet(text='van '
+                                                           'netten '
+                                                           'over '
+                                                           'de '
+                                                           'weg. '
+                                                           'Daaronder '
+                                                           'kunnen',
+                                                      start=305.36,
+                                                      duration=5.399),
+                             FetchedTranscriptSnippet(text='ze '
+                                                           'dan '
+                                                           'veilig '
+                                                           'rijden '
+                                                           'zonder '
+                                                           'bang '
+                                                           'te '
+                                                           'zijn',
+                                                      start=308.0,
+                                                      duration=5.96),
+                             FetchedTranscriptSnippet(text='voor '
+                                                           'Russische '
+                                                           'drones.',
+                                                      start=310.759,
+                                                      duration=5.761),
+                             FetchedTranscriptSnippet(text='De '
+                                                           'oorlog '
+                                                           'duurt '
+                                                           'dus '
+                                                           'al '
+                                                           'meer '
+                                                           'dan '
+                                                           '4er '
+                                                           'jaar',
+                                                      start=313.96,
+                                                      duration=3.92),
+                             FetchedTranscriptSnippet(text='en '
+                                                           'een '
+                                                           'einde '
+                                                           '[schraapt '
+                                                           'keel] '
+                                                           'lijkt '
+                                                           'er',
+                                                      start=316.52,
+                                                      duration=3.959),
+                             FetchedTranscriptSnippet(text='nog '
+                                                           'niet '
+                                                           'te '
+                                                           'komen. '
+                                                           'Oekraïne '
+                                                           'wil '
+                                                           'geen',
+                                                      start=317.88,
+                                                      duration=4.759),
+                             FetchedTranscriptSnippet(text='land '
+                                                           'geven '
+                                                           'aan '
+                                                           'Rusland '
+                                                           'en '
+                                                           'de '
+                                                           'Russen',
+                                                      start=320.479,
+                                                      duration=4.56),
+                             FetchedTranscriptSnippet(text='zeggen '
+                                                           'dat '
+                                                           'ze '
+                                                           'pas '
+                                                           'stoppen '
+                                                           'met '
+                                                           'de '
+                                                           'oorlog',
+                                                      start=322.639,
+                                                      duration=4.0),
+                             FetchedTranscriptSnippet(text='als '
+                                                           'ze '
+                                                           'alles '
+                                                           'hebben '
+                                                           'veroverd '
+                                                           'wat '
+                                                           'ze',
+                                                      start=325.039,
+                                                      duration=4.6),
+                             FetchedTranscriptSnippet(text='willen.',
+                                                      start=326.639,
+                                                      duration=3.0),
+                             FetchedTranscriptSnippet(text='Vandaag '
+                                                           'is '
+                                                           'het '
+                                                           'Hemelvaart, '
+                                                           'een',
+                                                      start=331.16,
+                                                      duration=4.12),
+                             FetchedTranscriptSnippet(text='christelijke '
+                                                           'feestdag '
+                                                           'waarop '
+                                                           'veel',
+                                                      start=333.28,
+                                                      duration=4.52),
+                             FetchedTranscriptSnippet(text='gelovige '
+                                                           'mensen '
+                                                           'naar '
+                                                           'de '
+                                                           'kerk '
+                                                           'gaan. '
+                                                           'Maar',
+                                                      start=335.28,
+                                                      duration=4.4),
+                             FetchedTranscriptSnippet(text='er '
+                                                           'zijn '
+                                                           'ook '
+                                                           'mensen '
+                                                           'die '
+                                                           'vandaag '
+                                                           'heel',
+                                                      start=337.8,
+                                                      duration=4.08),
+                             FetchedTranscriptSnippet(text='vroeg '
+                                                           'zijn '
+                                                           'opgestaan '
+                                                           'om '
+                                                           'te '
+                                                           'wandelen '
+                                                           'of',
+                                                      start=339.68,
+                                                      duration=5.88),
+                             FetchedTranscriptSnippet(text='te '
+                                                           'fietsen '
+                                                           'in '
+                                                           'de '
+                                                           'natuur.',
+                                                      start=341.88,
+                                                      duration=5.599),
+                             FetchedTranscriptSnippet(text='En '
+                                                           'dat '
+                                                           'deden '
+                                                           'honderden '
+                                                           'mensen '
+                                                           'vanochtend',
+                                                      start=345.56,
+                                                      duration=4.8),
+                             FetchedTranscriptSnippet(text='ook '
+                                                           'bij '
+                                                           'de '
+                                                           'Reewijkse '
+                                                           'plassen.',
+                                                      start=347.479,
+                                                      duration=5.521),
+                             FetchedTranscriptSnippet(text='En '
+                                                           'dit '
+                                                           'heet '
+                                                           'dawtrappen. '
+                                                           'Mensen '
+                                                           'staan '
+                                                           'dan',
+                                                      start=350.36,
+                                                      duration=5.2),
+                             FetchedTranscriptSnippet(text='heel '
+                                                           'vroeg '
+                                                           'op '
+                                                           'in '
+                                                           'het '
+                                                           'donker '
+                                                           'en '
+                                                           'er '
+                                                           'ligt',
+                                                      start=353.0,
+                                                      duration=4.639),
+                             FetchedTranscriptSnippet(text='dan '
+                                                           'nog '
+                                                           'daw '
+                                                           'of '
+                                                           'water '
+                                                           'op '
+                                                           'de '
+                                                           'planten '
+                                                           'en',
+                                                      start=355.56,
+                                                      duration=4.72),
+                             FetchedTranscriptSnippet(text='het '
+                                                           'gras. '
+                                                           'En '
+                                                           'daarom '
+                                                           'heet '
+                                                           'het '
+                                                           'zo. '
+                                                           'Het '
+                                                           'is',
+                                                      start=357.639,
+                                                      duration=4.56),
+                             FetchedTranscriptSnippet(text='een '
+                                                           'gewoonte '
+                                                           'die '
+                                                           'al '
+                                                           'lang '
+                                                           'bestaat '
+                                                           'op',
+                                                      start=360.28,
+                                                      duration=3.12),
+                             FetchedTranscriptSnippet(text='Hemelvaart.',
+                                                      start=362.199,
+                                                      duration=2.84),
+                             FetchedTranscriptSnippet(text='Ja, '
+                                                           'ik '
+                                                           'heb '
+                                                           'hem '
+                                                           'ook. '
+                                                           'Ik '
+                                                           'vind '
+                                                           'het '
+                                                           'heerlijk',
+                                                      start=363.4,
+                                                      duration=3.199),
+                             FetchedTranscriptSnippet(text='om '
+                                                           'één '
+                                                           'keer '
+                                                           'per '
+                                                           'jaar '
+                                                           'zo '
+                                                           'vroeg '
+                                                           'op '
+                                                           'te',
+                                                      start=365.039,
+                                                      duration=3.28),
+                             FetchedTranscriptSnippet(text='staan '
+                                                           'en '
+                                                           'ook '
+                                                           'de '
+                                                           'fietstochten '
+                                                           'er '
+                                                           'naartoe',
+                                                      start=366.599,
+                                                      duration=4.0),
+                             FetchedTranscriptSnippet(text='al, '
+                                                           'weet '
+                                                           'je '
+                                                           'wel, '
+                                                           'je '
+                                                           'hoort '
+                                                           'de '
+                                                           'kikkers '
+                                                           'en',
+                                                      start=368.319,
+                                                      duration=4.401),
+                             FetchedTranscriptSnippet(text='ja, '
+                                                           'het '
+                                                           'is '
+                                                           'gewoon '
+                                                           'heerlijk '
+                                                           'en '
+                                                           'de '
+                                                           'zon '
+                                                           'te',
+                                                      start=370.599,
+                                                      duration=4.6),
+                             FetchedTranscriptSnippet(text='zien '
+                                                           'opkomen.',
+                                                      start=372.72,
+                                                      duration=4.08),
+                             FetchedTranscriptSnippet(text='Het '
+                                                           'was '
+                                                           'vandaag '
+                                                           'wel '
+                                                           'kouder '
+                                                           'en',
+                                                      start=375.199,
+                                                      duration=4.72),
+                             FetchedTranscriptSnippet(text='regenachtiger '
+                                                           'dan '
+                                                           'andere '
+                                                           'jaren.',
+                                                      start=376.8,
+                                                      duration=6.0),
+                             FetchedTranscriptSnippet(text='Pon '
+                                                           'aan, '
+                                                           'winterjas '
+                                                           'aan, '
+                                                           '[gelach]',
+                                                      start=379.919,
+                                                      duration=5.801),
+                             FetchedTranscriptSnippet(text='extra '
+                                                           'sokken '
+                                                           'mee '
+                                                           'voor '
+                                                           'het '
+                                                           'geval '
+                                                           'dat. '
+                                                           'Ja,',
+                                                      start=382.8,
+                                                      duration=5.0),
+                             FetchedTranscriptSnippet(text='het '
+                                                           'is '
+                                                           'best '
+                                                           'een '
+                                                           'frisse '
+                                                           'hemelvaart, '
+                                                           'hè?',
+                                                      start=385.72,
+                                                      duration=6.684),
+                             FetchedTranscriptSnippet(text='Ja. '
+                                                           'Ja, '
+                                                           'een '
+                                                           'beetje '
+                                                           'waterig '
+                                                           'ook. '
+                                                           '[gelach]',
+                                                      start=387.8,
+                                                      duration=4.604),
+                             FetchedTranscriptSnippet(text='Het '
+                                                           'is '
+                                                           'wel '
+                                                           'een '
+                                                           'frisse '
+                                                           'hemelvaart, '
+                                                           'hè?',
+                                                      start=393.08,
+                                                      duration=5.88),
+                             FetchedTranscriptSnippet(text='Ja, '
+                                                           'maar '
+                                                           'toch. '
+                                                           'Ja, '
+                                                           'het '
+                                                           'het '
+                                                           'is '
+                                                           'wat '
+                                                           'het',
+                                                      start=396.08,
+                                                      duration=4.92),
+                             FetchedTranscriptSnippet(text='is. '
+                                                           'Je '
+                                                           'moet '
+                                                           'het '
+                                                           'accepteren '
+                                                           'en '
+                                                           'je '
+                                                           'kan '
+                                                           'wel',
+                                                      start=398.96,
+                                                      duration=3.2),
+                             FetchedTranscriptSnippet(text='zeggen: '
+                                                           '"Ik '
+                                                           'ga '
+                                                           'het '
+                                                           'niet '
+                                                           'doen '
+                                                           'dat '
+                                                           'regen."',
+                                                      start=401.0,
+                                                      duration=3.039),
+                             FetchedTranscriptSnippet(text='Maar '
+                                                           'ja, '
+                                                           'dat '
+                                                           'vind '
+                                                           'ik '
+                                                           'ook '
+                                                           'weer '
+                                                           'een '
+                                                           'een '
+                                                           'ik',
+                                                      start=402.16,
+                                                      duration=3.12),
+                             FetchedTranscriptSnippet(text='sta '
+                                                           'er '
+                                                           'nu '
+                                                           'toch, '
+                                                           'dus '
+                                                           'dan '
+                                                           'gaan '
+                                                           'we '
+                                                           'het '
+                                                           'ook',
+                                                      start=404.039,
+                                                      duration=4.121),
+                             FetchedTranscriptSnippet(text='doen. '
+                                                           'Dus '
+                                                           'dat '
+                                                           'eh '
+                                                           'Nee, '
+                                                           'leuk.',
+                                                      start=405.28,
+                                                      duration=4.639),
+                             FetchedTranscriptSnippet(text='Met '
+                                                           'Hemelvaart '
+                                                           'gaan '
+                                                           'veel '
+                                                           'mensen '
+                                                           'ook',
+                                                      start=408.16,
+                                                      duration=4.0),
+                             FetchedTranscriptSnippet(text='kamperen '
+                                                           'omdat '
+                                                           'ze '
+                                                           'een '
+                                                           'lang '
+                                                           'weekend '
+                                                           'vrij',
+                                                      start=409.919,
+                                                      duration=4.72),
+                             FetchedTranscriptSnippet(text='zijn. '
+                                                           'Deze '
+                                                           'kampeerders '
+                                                           'vinden '
+                                                           'het '
+                                                           'jammer',
+                                                      start=412.16,
+                                                      duration=6.12),
+                             FetchedTranscriptSnippet(text='dat '
+                                                           'het '
+                                                           'zulk '
+                                                           'slecht '
+                                                           'weer '
+                                                           'is.',
+                                                      start=414.639,
+                                                      duration=6.4),
+                             FetchedTranscriptSnippet(text='Wat '
+                                                           'vindt '
+                                                           'u '
+                                                           'van '
+                                                           'het '
+                                                           'weer? '
+                                                           'Ja. '
+                                                           'Eh '
+                                                           'nat',
+                                                      start=418.28,
+                                                      duration=3.96),
+                             FetchedTranscriptSnippet(text='kloot. '
+                                                           '[gelach]',
+                                                      start=421.039,
+                                                      duration=3.321),
+                             FetchedTranscriptSnippet(text='Hoe '
+                                                           'was '
+                                                           'het '
+                                                           'eh '
+                                                           'met '
+                                                           'alle '
+                                                           'regen '
+                                                           'op '
+                                                           'op '
+                                                           'de',
+                                                      start=422.24,
+                                                      duration=2.88),
+                             FetchedTranscriptSnippet(text='tent?',
+                                                      start=424.36,
+                                                      duration=2.32),
+                             FetchedTranscriptSnippet(text='Het '
+                                                           'was '
+                                                           'wel '
+                                                           'even '
+                                                           'spannend. '
+                                                           'We '
+                                                           'zijn '
+                                                           'nog',
+                                                      start=425.12,
+                                                      duration=3.04),
+                             FetchedTranscriptSnippet(text='een '
+                                                           'paar '
+                                                           'keer '
+                                                           'eh '
+                                                           'even '
+                                                           'eruit '
+                                                           'gegaan '
+                                                           'omdat',
+                                                      start=426.68,
+                                                      duration=3.32),
+                             FetchedTranscriptSnippet(text='onze '
+                                                           'luifel '
+                                                           'heel '
+                                                           'vaak '
+                                                           'nog '
+                                                           'eh '
+                                                           'nog',
+                                                      start=428.16,
+                                                      duration=3.12),
+                             FetchedTranscriptSnippet(text='volloopt. '
+                                                           'Dus '
+                                                           'die '
+                                                           'hebben '
+                                                           'we '
+                                                           'een '
+                                                           'paar',
+                                                      start=430.0,
+                                                      duration=3.479),
+                             FetchedTranscriptSnippet(text='keer '
+                                                           'eh '
+                                                           'leeg '
+                                                           'moeten '
+                                                           'halen '
+                                                           'vannacht, '
+                                                           'maar',
+                                                      start=431.28,
+                                                      duration=3.319),
+                             FetchedTranscriptSnippet(text='verder '
+                                                           'was '
+                                                           'het '
+                                                           'wel '
+                                                           'prima.',
+                                                      start=433.479,
+                                                      duration=2.881),
+                             FetchedTranscriptSnippet(text='Ja. '
+                                                           'Nou, '
+                                                           'we '
+                                                           'hadden '
+                                                           'wel '
+                                                           'iets '
+                                                           'beter '
+                                                           'weer',
+                                                      start=434.599,
+                                                      duration=2.921),
+                             FetchedTranscriptSnippet(text='verwacht. '
+                                                           'Afgelopen '
+                                                           'jaren '
+                                                           'waren '
+                                                           'we',
+                                                      start=436.36,
+                                                      duration=2.679),
+                             FetchedTranscriptSnippet(text='steeds '
+                                                           'met '
+                                                           'Hemelvaard '
+                                                           'aan '
+                                                           'het '
+                                                           'kamperen',
+                                                      start=437.52,
+                                                      duration=3.239),
+                             FetchedTranscriptSnippet(text='en '
+                                                           'het '
+                                                           'was '
+                                                           'altijd '
+                                                           'lekker '
+                                                           'weer. '
+                                                           'Maar '
+                                                           'dit',
+                                                      start=439.039,
+                                                      duration=2.921),
+                             FetchedTranscriptSnippet(text='viel '
+                                                           'wel '
+                                                           'tegen. '
+                                                           'Maar '
+                                                           'we '
+                                                           'zijn '
+                                                           'met '
+                                                           'de',
+                                                      start=440.759,
+                                                      duration=2.321),
+                             FetchedTranscriptSnippet(text='vriendengroep, '
+                                                           'dus '
+                                                           'dan '
+                                                           'zeg '
+                                                           'je '
+                                                           'het '
+                                                           'ook',
+                                                      start=441.96,
+                                                      duration=2.2),
+                             FetchedTranscriptSnippet(text='niet '
+                                                           'af.',
+                                                      start=443.08,
+                                                      duration=2.88),
+                             FetchedTranscriptSnippet(text='Meestal '
+                                                           'is '
+                                                           'Hemelvaart '
+                                                           'altijd '
+                                                           'wel '
+                                                           'lekker.',
+                                                      start=444.16,
+                                                      duration=3.2),
+                             FetchedTranscriptSnippet(text='Ehm '
+                                                           'dus '
+                                                           'wij '
+                                                           'hopen '
+                                                           'eigenlijk '
+                                                           'nog '
+                                                           'steeds',
+                                                      start=445.96,
+                                                      duration=3.48),
+                             FetchedTranscriptSnippet(text='dat '
+                                                           'het '
+                                                           'eh '
+                                                           'dat '
+                                                           'het '
+                                                           'gewoon '
+                                                           'toch '
+                                                           'tegen',
+                                                      start=447.36,
+                                                      duration=3.76),
+                             FetchedTranscriptSnippet(text='alle '
+                                                           'verwachtingen '
+                                                           'en '
+                                                           'toch '
+                                                           'nog '
+                                                           'mooi '
+                                                           'weer',
+                                                      start=449.44,
+                                                      duration=4.479),
+                             FetchedTranscriptSnippet(text='wordt.',
+                                                      start=451.12,
+                                                      duration=4.479),
+                             FetchedTranscriptSnippet(text='Ja, '
+                                                           'of '
+                                                           'deze '
+                                                           'meneer '
+                                                           'zijn '
+                                                           'zin '
+                                                           'krijgt, '
+                                                           'dat',
+                                                      start=453.919,
+                                                      duration=3.161),
+                             FetchedTranscriptSnippet(text='gaat '
+                                                           'hij '
+                                                           'nu '
+                                                           'horen, '
+                                                           'want '
+                                                           'ik '
+                                                           'krijgt '
+                                                           'nog',
+                                                      start=455.599,
+                                                      duration=3.801),
+                             FetchedTranscriptSnippet(text='het '
+                                                           'weer '
+                                                           'van '
+                                                           'me. '
+                                                           'Morgen '
+                                                           'zijn '
+                                                           'er '
+                                                           'veel',
+                                                      start=457.08,
+                                                      duration=4.88),
+                             FetchedTranscriptSnippet(text='wolken '
+                                                           'en '
+                                                           'vallen '
+                                                           'er '
+                                                           'buien. '
+                                                           'Soms '
+                                                           'schijnt',
+                                                      start=459.4,
+                                                      duration=5.0),
+                             FetchedTranscriptSnippet(text='de '
+                                                           'zon '
+                                                           'even. '
+                                                           'Het '
+                                                           'blijft '
+                                                           'wel '
+                                                           'erg '
+                                                           'fris.',
+                                                      start=461.96,
+                                                      duration=5.799),
+                             FetchedTranscriptSnippet(text='Het '
+                                                           'wordt '
+                                                           '10 '
+                                                           'tot '
+                                                           '12°. '
+                                                           'Zaterdag '
+                                                           'is '
+                                                           'er '
+                                                           'nog',
+                                                      start=464.4,
+                                                      duration=5.239),
+                             FetchedTranscriptSnippet(text='steeds '
+                                                           'kans '
+                                                           'op '
+                                                           'buien, '
+                                                           'maar '
+                                                           'het '
+                                                           'is '
+                                                           'ook',
+                                                      start=467.759,
+                                                      duration=5.44),
+                             FetchedTranscriptSnippet(text='lang '
+                                                           'droog '
+                                                           'en '
+                                                           'het '
+                                                           'wordt '
+                                                           '12 '
+                                                           'tot '
+                                                           '14°en.',
+                                                      start=469.639,
+                                                      duration=5.321),
+                             FetchedTranscriptSnippet(text='Zondag '
+                                                           'gaat '
+                                                           'de '
+                                                           'temperatuur '
+                                                           'weer '
+                                                           'wat',
+                                                      start=473.199,
+                                                      duration=5.041),
+                             FetchedTranscriptSnippet(text='omhoog. '
+                                                           'Het '
+                                                           'wordt '
+                                                           'dan '
+                                                           '13 '
+                                                           'tot '
+                                                           '16°. '
+                                                           'Af '
+                                                           'en',
+                                                      start=474.96,
+                                                      duration=5.079),
+                             FetchedTranscriptSnippet(text='toe '
+                                                           'valt '
+                                                           'er '
+                                                           'een '
+                                                           'bui, '
+                                                           'maar '
+                                                           'het '
+                                                           'is '
+                                                           'ook',
+                                                      start=478.24,
+                                                      duration=4.639),
+                             FetchedTranscriptSnippet(text='vaak '
+                                                           'droog.',
+                                                      start=480.039,
+                                                      duration=4.681),
+                             FetchedTranscriptSnippet(text='In '
+                                                           'dit '
+                                                           'journaal '
+                                                           'vertelden '
+                                                           'we '
+                                                           'over '
+                                                           'een',
+                                                      start=482.879,
+                                                      duration=4.241),
+                             FetchedTranscriptSnippet(text='onderzoek '
+                                                           'over '
+                                                           "grutto's.",
+                                                      start=484.72,
+                                                      duration=4.439),
+                             FetchedTranscriptSnippet(text='Het '
+                                                           'ging '
+                                                           'over '
+                                                           'drones '
+                                                           'die '
+                                                           'worden '
+                                                           'gebruikt',
+                                                      start=487.12,
+                                                      duration=5.6),
+                             FetchedTranscriptSnippet(text='in '
+                                                           'de '
+                                                           'oorlog '
+                                                           'tussen '
+                                                           'Rusland '
+                                                           'en '
+                                                           'Oekraïne.',
+                                                      start=489.159,
+                                                      duration=5.241),
+                             FetchedTranscriptSnippet(text='En '
+                                                           'we '
+                                                           'lieten '
+                                                           'zien '
+                                                           'dat '
+                                                           'mensen '
+                                                           'vroeg',
+                                                      start=492.72,
+                                                      duration=4.8),
+                             FetchedTranscriptSnippet(text='opstonden '
+                                                           'om '
+                                                           'te '
+                                                           'gaan '
+                                                           'dappen. '
+                                                           'Dat '
+                                                           'was '
+                                                           'het',
+                                                      start=494.4,
+                                                      duration=5.479),
+                             FetchedTranscriptSnippet(text='voor '
+                                                           'nu. '
+                                                           'Morgen '
+                                                           'is '
+                                                           'er '
+                                                           'uiteraard '
+                                                           'weer '
+                                                           'een',
+                                                      start=497.52,
+                                                      duration=4.639),
+                             FetchedTranscriptSnippet(text='NOS '
+                                                           'journaal '
+                                                           'in '
+                                                           'makkelijke '
+                                                           'taal. '
+                                                           'Tot',
+                                                      start=499.879,
+                                                      duration=5.28),
+                             FetchedTranscriptSnippet(text='dan.',
+                                                      start=502.159,
+                                                      duration=3.0),
+                             FetchedTranscriptSnippet(text='เ',
+                                                      start=508.72,
+                                                      duration=2.039)],
+                  video_id='1ZDekaw6vwg',
+                  language='Dutch '
+                           '(auto-generated)',
+                  language_code='nl',
+                  is_generated=True)

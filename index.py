@@ -1,8 +1,13 @@
 import sys
+import string
 from pprint import pprint
+from parser import GetFetchedTranscriptFromFile
 from youtube_transcript_api import YouTubeTranscriptApi
+from youtube_transcript_api import FetchedTranscript
+from youtube_transcript_api import FetchedTranscriptSnippet
 # from youtube_transcript_api.proxies import GenericProxyConfig
 #from youtube_transcript_api.proxies import WebshareProxyConfig
+
 
 ### Generic Proxy API setup
 # ytt_api = YouTubeTranscriptApi(
@@ -31,26 +36,62 @@ ytt_api = YouTubeTranscriptApi()
 #     video_id = user_input[1]
 # else:
 #     video_id = None
-video_id = "J2y1wVCD9hI"
-if (video_id):
-    try:
-        transcript_list = ytt_api.list(video_id) #languages=['nl', 'en']
-        nl_transcript = transcript_list.find_transcript(['nl'])
-        original_transcript = nl_transcript.fetch()
-        translated_transcript = nl_transcript.translate('en').fetch()
-    except Exception as e:
-        print(f"An error occurred: {e}")
-        sys.exit()
-else:
-    print("Error: Missing video ID. Exiting script")
-    sys.exit()
+
+### Hardcoded video ID
+# video_id = "J2y1wVCD9hI"
+
+# if (video_id):
+#     try:
+#         transcript_list = ytt_api.list(video_id) #languages=['nl', 'en']
+#         nl_transcript = transcript_list.find_transcript(['nl'])
+#         original_transcript = nl_transcript.fetch()
+#         translated_transcript = nl_transcript.translate('en').fetch()
+#     except Exception as e:
+#         print(f"An error occurred: {e}")
+#         sys.exit()
+# else:
+#     print("Error: Missing video ID. Exiting script")
+#     sys.exit()
+
+original_transcript = GetFetchedTranscriptFromFile()
 
 print(' ===== Original transcript:')
 print(f"  Number of snippets: {len(original_transcript)}")
-for snippet in original_transcript:
-    pprint(snippet.text, indent=2, width=40)
 
-print(' ===== English auto-translated transcript:')
-print(f"  Number of snippets: {len(translated_transcript)}")
-for snippet in translated_transcript:
-    pprint(snippet.text, indent=2, width=40)
+def GetTranscriptString(transcript: FetchedTranscript):
+    """
+    Concatenate all snippets from FetchedTranscript instance and get whole transcript in a signle string
+    """
+    whole_text = ''
+    end_of_line_chars = ['.', '?', '!', ']', ')']
+    for snippet in transcript:
+        if (len(whole_text) and whole_text[-1] in end_of_line_chars):
+            whole_text += " " + snippet.text
+        else:
+            whole_text += snippet.text
+
+    return whole_text
+
+raw_transcript = GetTranscriptString(original_transcript)
+# pprint(raw_transcript, indent=2, width=40)
+
+def ExtractListOfUniqueWords(transcript: str):
+    """
+    Get a list of unique words from a transcript. 
+    """
+    clean_transcript = "".join([char for char in transcript if char not in string.punctuation])
+    individual_words = clean_transcript.split(' ')
+    return sorted(set([word.lower() for word in individual_words if word.isalpha()]))
+
+res = ExtractListOfUniqueWords(raw_transcript)
+print(len(raw_transcript))
+print(len(res))
+print(res)
+
+### remove all 
+
+### Translations
+# print(' ===== English auto-translated transcript:')
+# print(f"  Number of snippets: {len(translated_transcript)}")
+# for snippet in translated_transcript:
+#     pprint(snippet.text, indent=2, width=40)
