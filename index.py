@@ -2,6 +2,7 @@ import sys
 import string
 from pprint import pprint
 from parser import GetFetchedTranscriptFromFile
+from _questionaire import PromptUserWordSelection
 from youtube_transcript_api import YouTubeTranscriptApi
 from youtube_transcript_api import FetchedTranscript
 from youtube_transcript_api import FetchedTranscriptSnippet
@@ -83,10 +84,9 @@ def ExtractListOfUniqueWords(transcript: str):
     individual_words = clean_transcript.split(' ')
     return sorted(set([word.lower() for word in individual_words if word.isalpha()]))
 
-res = ExtractListOfUniqueWords(raw_transcript)
-print(len(raw_transcript))
-print(len(res))
-print(res)
+unique_words = ExtractListOfUniqueWords(raw_transcript)
+user_approved_words = PromptUserWordSelection(unique_words)
+print(user_approved_words)
 
 ### remove all 
 
