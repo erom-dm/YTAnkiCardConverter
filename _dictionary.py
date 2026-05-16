@@ -7,7 +7,7 @@ TRANSLATION = '?translations=true'
 
 def GetDutchWordEntry(word: str, language: str = 'nl'):
     """
-    Requests specific duch
+    Requests Dutch word entry from freedictionary. 1000 requests per day rate limit.
     """
     try:
         formattedURL = f"{URL}/{language}/{urllib.parse.quote(word)}{TRANSLATION}"
@@ -19,11 +19,18 @@ def GetDutchWordEntry(word: str, language: str = 'nl'):
     except Exception as err:
         print(f"An error occurred: {err}")
 
-    entry = data['entries'][0]
-    return {
-        "word": data.get('word'),
-        "partOfSpeech": entry.get('partOfSpeech'),
-        "plural": [item for item in entry.get('forms') if "plural" in item.get('tags')],
-        "senses": [{"definition": item.get('definition'), "examples": item.get('examples')} for item in entry.get('senses')],
-        "source": data.get('source').get('url')
-    }
+    entries = data.get('entries')
+    if (len(entries)):
+        entry = entries[0]
+        return {
+            "word": data.get('word'),
+            "partOfSpeech": entry.get('partOfSpeech'),
+            "plural": [item for item in entry.get('forms') if "plural" in item.get('tags')],
+            "senses": [{"definition": item.get('definition'), "examples": item.get('examples')} for item in entry.get('senses')],
+            "source": data.get('source').get('url')
+        }
+    else:
+        return {
+            "word": data.get('word'),
+            "senses": []
+        }

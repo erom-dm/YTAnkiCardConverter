@@ -2,6 +2,7 @@ import sys
 import string
 from pprint import pprint
 from parser import GetFetchedTranscriptFromFile
+from _dictionary import GetDutchWordEntry
 from _questionaire import PromptUserWordSelection
 from youtube_transcript_api import YouTubeTranscriptApi
 from youtube_transcript_api import FetchedTranscript
@@ -56,9 +57,6 @@ ytt_api = YouTubeTranscriptApi()
 
 original_transcript = GetFetchedTranscriptFromFile()
 
-print(' ===== Original transcript:')
-print(f"  Number of snippets: {len(original_transcript)}")
-
 def GetTranscriptString(transcript: FetchedTranscript):
     """
     Concatenate all snippets from FetchedTranscript instance and get whole transcript in a signle string
@@ -86,7 +84,19 @@ def ExtractListOfUniqueWords(transcript: str):
 
 unique_words = ExtractListOfUniqueWords(raw_transcript)
 user_approved_words = PromptUserWordSelection(unique_words)
-print(user_approved_words)
+word_entries = [GetDutchWordEntry(word) for word in user_approved_words]
+valid_word_entries = []
+invalid_word_entries = []
+for entry in word_entries:
+    if len(entry["senses"]):
+        valid_word_entries.append(entry)
+    else:
+        invalid_word_entries.append(entry)
+
+print("Valid words:")
+print(valid_word_entries)
+print("Words not found:")
+print(invalid_word_entries)
 
 ### remove all 
 
