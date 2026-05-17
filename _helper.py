@@ -1,5 +1,4 @@
 import questionary
-from pprint import pprint
 
 FIELD_NAMES = [
     "word",
@@ -31,7 +30,6 @@ def FormatDictionaryEntries(entries: list[dict]) -> list[dict[str:str]]:
     for entry in entries:
         definitions = []
         examples = []
-        # pprint(entry, indent=2, width=40)
         for sense in entry.get("senses"):
             definitions.append(sense.get("definition", ""))
             examples.append(sense.get("examples", ""))

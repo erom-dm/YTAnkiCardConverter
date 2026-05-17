@@ -1,6 +1,6 @@
 import sys
-from pprint import pprint
-from parser import GetFetchedTranscriptFromFile
+
+# from parser import GetFetchedTranscriptFromFile
 from _dictionary import GetDutchWordEntry
 from _csv_utils import TableIO
 from _helper import PromptUserWordSelection, FormatDictionaryEntries
@@ -12,6 +12,7 @@ from youtube_transcript_api import YouTubeTranscriptApi
 # from youtube_transcript_api.proxies import GenericProxyConfig
 # from youtube_transcript_api.proxies import WebshareProxyConfig
 
+FILE_NAME = "test.csv"
 
 ### Generic Proxy API setup
 # ytt_api = YouTubeTranscriptApi(
@@ -32,33 +33,32 @@ from youtube_transcript_api import YouTubeTranscriptApi
 ### Regular API setup
 ytt_api = YouTubeTranscriptApi()
 
-# user input
-# user_input = input("Please provide YT video ID or URL:").split("/watch?v=")
-# if (len(user_input) == 1):
-#     video_id = user_input[0]
-# elif (len(user_input) == 2):
-#     video_id = user_input[1]
-# else:
-#     video_id = None
+### user input
+user_input = input("Please provide YT video ID or URL:").split("/watch?v=")
+if len(user_input) == 1:
+    video_id = user_input[0]
+elif len(user_input) == 2:
+    video_id = user_input[1]
+else:
+    video_id = None
 
 ### Hardcoded video ID
 # video_id = "J2y1wVCD9hI"
 
-# if (video_id):
-#     try:
-#         transcript_list = ytt_api.list(video_id) #languages=['nl', 'en']
-#         nl_transcript = transcript_list.find_transcript(['nl'])
-#         original_transcript = nl_transcript.fetch()
-#         translated_transcript = nl_transcript.translate('en').fetch()
-#     except Exception as e:
-#         print(f"An error occurred: {e}")
-#         sys.exit()
-# else:
-#     print("Error: Missing video ID. Exiting script.")
-#     sys.exit()
+### Get transcript from YouTube
+if video_id:
+    try:
+        transcript_list = ytt_api.list(video_id)  # languages=['nl', 'en']
+        nl_transcript = transcript_list.find_transcript(["nl"])
+        original_transcript = nl_transcript.fetch()
+    except Exception as e:
+        print(f"An error occurred: {e}")
+        sys.exit()
+else:
+    print("Error: Missing video ID. Exiting script.")
+    sys.exit()
 
-FILE_NAME = "test.csv"
-original_transcript = GetFetchedTranscriptFromFile()
+# original_transcript = GetFetchedTranscriptFromFile()
 raw_transcript = GetTranscriptString(original_transcript)
 # pprint(raw_transcript, indent=2, width=40)
 
@@ -86,20 +86,3 @@ if invalid_word_entries:
 formatted_entries = FormatDictionaryEntries(valid_word_entries)
 table = TableIO("test.csv")
 table.writeRows(formatted_entries)
-
-# print("Valid words:")
-# for entry in valid_word_entries:
-#     pprint(entry, indent=2, width=40)
-#     print("=======")
-# print("Words not found:")
-# for entry in invalid_word_entries:
-#     pprint(entry, indent=2, width=40)
-#     print("=======")
-
-### remove all
-
-### Translations
-# print(' ===== English auto-translated transcript:')
-# print(f"  Number of snippets: {len(translated_transcript)}")
-# for snippet in translated_transcript:
-#     pprint(snippet.text, indent=2, width=40)
