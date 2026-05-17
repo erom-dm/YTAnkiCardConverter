@@ -1,14 +1,15 @@
 import sys
-import string
 from pprint import pprint
 from parser import GetFetchedTranscriptFromFile
 from _dictionary import GetDutchWordEntry
-from _questionaire import PromptUserWordSelection
+from _helper import PromptUserWordSelection
+from _transcript import GetTranscriptString, ExtractListOfNewUniqueWords
 from youtube_transcript_api import YouTubeTranscriptApi
-from youtube_transcript_api import FetchedTranscript
-from youtube_transcript_api import FetchedTranscriptSnippet
+
+# from youtube_transcript_api import FetchedTranscript
+# from youtube_transcript_api import FetchedTranscriptSnippet
 # from youtube_transcript_api.proxies import GenericProxyConfig
-#from youtube_transcript_api.proxies import WebshareProxyConfig
+# from youtube_transcript_api.proxies import WebshareProxyConfig
 
 
 ### Generic Proxy API setup
@@ -52,39 +53,22 @@ ytt_api = YouTubeTranscriptApi()
 #         print(f"An error occurred: {e}")
 #         sys.exit()
 # else:
-#     print("Error: Missing video ID. Exiting script")
+#     print("Error: Missing video ID. Exiting script.")
 #     sys.exit()
 
+FILE_NAME = "test.csv"
 original_transcript = GetFetchedTranscriptFromFile()
-
-def GetTranscriptString(transcript: FetchedTranscript):
-    """
-    Concatenate all snippets from FetchedTranscript instance and get whole transcript in a signle string
-    """
-    whole_text = ''
-    end_of_line_chars = ['.', '?', '!', ']', ')']
-    for snippet in transcript:
-        if (len(whole_text) and whole_text[-1] in end_of_line_chars):
-            whole_text += " " + snippet.text
-        else:
-            whole_text += snippet.text
-
-    return whole_text
-
 raw_transcript = GetTranscriptString(original_transcript)
 # pprint(raw_transcript, indent=2, width=40)
 
-def ExtractListOfUniqueWords(transcript: str):
-    """
-    Get a list of unique words from a transcript. 
-    """
-    clean_transcript = "".join([char for char in transcript if char not in string.punctuation])
-    individual_words = clean_transcript.split(' ')
-    return sorted(set([word.lower() for word in individual_words if word.isalpha()]))
+new_words = ExtractListOfNewUniqueWords(raw_transcript, FILE_NAME)
+user_approved_words = PromptUserWordSelection(new_words)
+if user_approved_words:
+    word_entries = [GetDutchWordEntry(word) for word in user_approved_words]
+else:
+    print("No words approved for import. Exiting script.")
+    sys.exit()
 
-unique_words = ExtractListOfUniqueWords(raw_transcript)
-user_approved_words = PromptUserWordSelection(unique_words)
-word_entries = [GetDutchWordEntry(word) for word in user_approved_words]
 valid_word_entries = []
 invalid_word_entries = []
 for entry in word_entries:
@@ -93,12 +77,23 @@ for entry in word_entries:
     else:
         invalid_word_entries.append(entry)
 
-print("Valid words:")
-print(valid_word_entries)
-print("Words not found:")
-print(invalid_word_entries)
+if invalid_word_entries:
+    print(
+        f"⚠ Following words were not found in the dictionary and will not be added to the deck: {[entry['word'] for entry in invalid_word_entries]}\n"
+    )
 
-### remove all 
+# !!! format valid_word_entries into .csv writable format
+
+print("Valid words:")
+for entry in valid_word_entries:
+    pprint(entry, indent=2, width=40)
+    print("=======")
+print("Words not found:")
+for entry in invalid_word_entries:
+    pprint(entry, indent=2, width=40)
+    print("=======")
+
+### remove all
 
 ### Translations
 # print(' ===== English auto-translated transcript:')

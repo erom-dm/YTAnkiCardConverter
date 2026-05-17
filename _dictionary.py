@@ -2,10 +2,11 @@ import requests
 from pprint import pprint
 import urllib.parse
 
-URL = 'https://freedictionaryapi.com/api/v1/entries'
-TRANSLATION = '?translations=true'
+URL = "https://freedictionaryapi.com/api/v1/entries"
+TRANSLATION = "?translations=true"
 
-def GetDutchWordEntry(word: str, language: str = 'nl'):
+
+def GetDutchWordEntry(word: str, language: str = "nl"):
     """
     Requests Dutch word entry from freedictionary. 1000 requests per day rate limit.
     """
@@ -19,18 +20,20 @@ def GetDutchWordEntry(word: str, language: str = 'nl'):
     except Exception as err:
         print(f"An error occurred: {err}")
 
-    entries = data.get('entries')
-    if (len(entries)):
+    entries = data.get("entries")
+    if len(entries):
         entry = entries[0]
         return {
-            "word": data.get('word'),
-            "partOfSpeech": entry.get('partOfSpeech'),
-            "plural": [item for item in entry.get('forms') if "plural" in item.get('tags')],
-            "senses": [{"definition": item.get('definition'), "examples": item.get('examples')} for item in entry.get('senses')],
-            "source": data.get('source').get('url')
+            "word": data.get("word"),
+            "partOfSpeech": entry.get("partOfSpeech"),
+            "plural": [
+                item for item in entry.get("forms") if "plural" in item.get("tags")
+            ],
+            "senses": [
+                {"definition": item.get("definition"), "examples": item.get("examples")}
+                for item in entry.get("senses")
+            ],
+            "source": data.get("source").get("url"),
         }
     else:
-        return {
-            "word": data.get('word'),
-            "senses": []
-        }
+        return {"word": data.get("word"), "senses": []}
