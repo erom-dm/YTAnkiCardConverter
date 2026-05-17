@@ -2,7 +2,8 @@ import sys
 from pprint import pprint
 from parser import GetFetchedTranscriptFromFile
 from _dictionary import GetDutchWordEntry
-from _helper import PromptUserWordSelection
+from _csv_utils import TableIO
+from _helper import PromptUserWordSelection, FormatDictionaryEntries
 from _transcript import GetTranscriptString, ExtractListOfNewUniqueWords
 from youtube_transcript_api import YouTubeTranscriptApi
 
@@ -82,16 +83,18 @@ if invalid_word_entries:
         f"⚠ Following words were not found in the dictionary and will not be added to the deck: {[entry['word'] for entry in invalid_word_entries]}\n"
     )
 
-# !!! format valid_word_entries into .csv writable format
+formatted_entries = FormatDictionaryEntries(valid_word_entries)
+table = TableIO("test.csv")
+table.writeRows(formatted_entries)
 
-print("Valid words:")
-for entry in valid_word_entries:
-    pprint(entry, indent=2, width=40)
-    print("=======")
-print("Words not found:")
-for entry in invalid_word_entries:
-    pprint(entry, indent=2, width=40)
-    print("=======")
+# print("Valid words:")
+# for entry in valid_word_entries:
+#     pprint(entry, indent=2, width=40)
+#     print("=======")
+# print("Words not found:")
+# for entry in invalid_word_entries:
+#     pprint(entry, indent=2, width=40)
+#     print("=======")
 
 ### remove all
 

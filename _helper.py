@@ -1,6 +1,14 @@
 import questionary
+from pprint import pprint
 
-FIELD_NAMES = ["word", "part of speech", "plural", "definitions", "examples", "source"]
+FIELD_NAMES = [
+    "word",
+    "part of speech",
+    "plural",
+    "definitions",
+    "examples",
+    "source",
+]
 
 
 def PromptUserWordSelection(word_list: list[str]) -> list[str] | None:
@@ -18,48 +26,25 @@ def PromptUserWordSelection(word_list: list[str]) -> list[str] | None:
     return selected_words
 
 
-# def FormatDictionaryEntries(entries: list[dict]) -> list[dict[str:str]]:
-#     foo
+def FormatDictionaryEntries(entries: list[dict]) -> list[dict[str:str]]:
+    formatted_entries = []
+    for entry in entries:
+        definitions = []
+        examples = []
+        # pprint(entry, indent=2, width=40)
+        for sense in entry.get("senses"):
+            definitions.append(sense.get("definition", ""))
+            examples.append(sense.get("examples", ""))
 
-
-test_input = [
-    {
-        "word": "even",
-        "partOfSpeech": "adverb",
-        "plural": [],
-        "senses": [
-            {
-                "definition": "shortly, briefly",
-                "examples": ["Ik zal even voor u kijken."],
-            },
-            {
-                "definition": "for a short period, for a while",
-                "examples": [
-                    "In de tweede helft van de 19e eeuw bloeide Vollenhove weer even op.^(nl:Vollenhove#Geschiedenis)"
-                ],
-            },
-            {
-                "definition": "for a moment; modal particle indicating that the speaker expects that something will require little time or effort.",
-                "examples": ["Zou je even de deur voor me dicht willen doen?"],
-            },
-            {
-                "definition": "just as, to the same degree (used with an adjective)",
-                "examples": [
-                    "In het midden van de vloer stond een tafel van wel vier meter hoog en een even grote stoel er bij."
-                ],
-            },
-            {
-                "definition": "(Netherlands) quite, rather",
-                "examples": ["Die is even kwaad!"],
-            },
-        ],
-        "source": "https://en.wiktionary.org/wiki/even",
-    },
-    {
-        "word": "frisse",
-        "partOfSpeech": "adjective",
-        "plural": [],
-        "senses": [{"definition": "inflection of fris:", "examples": []}],
-        "source": "https://en.wiktionary.org/wiki/frisse",
-    },
-]
+        formatted_entry = dict.fromkeys(FIELD_NAMES, "")
+        formatted_entry["word"] = entry.get("word", "")
+        formatted_entry["part of speech"] = entry.get("partOfSpeech", "")
+        formatted_entry["plural"] = [
+            f"{el.get('word', '')} ({el.get('tags', '')})"
+            for el in entry.get("plural", "")
+        ]
+        formatted_entry["definitions"] = definitions
+        formatted_entry["examples"] = examples
+        formatted_entry["source"] = entry.get("source", "")
+        formatted_entries.append(formatted_entry)
+    return formatted_entries
