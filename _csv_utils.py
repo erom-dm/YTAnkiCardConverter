@@ -1,6 +1,5 @@
 import csv
 import os
-from pprint import pprint
 from _helper import FIELD_NAMES
 
 
@@ -27,6 +26,5 @@ class TableIO:
             writer = csv.DictWriter(outfile, self._field_names)
             if not self._file_exists:
                 writer.writeheader()
-            pprint(rows_to_write)
             writer.writerows(rows_to_write)
         print(f"Succesfully appended {len(rows_to_write)} rows to {self._file_name}")
