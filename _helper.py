@@ -3,6 +3,7 @@ import questionary
 FIELD_NAMES = [
     "word",
     "part of speech",
+    "translation",
     "plural",
     "definitions",
     "examples",
@@ -37,6 +38,7 @@ def FormatDictionaryEntries(entries: list[dict]) -> list[dict[str:str]]:
         formatted_entry = dict.fromkeys(FIELD_NAMES, "")
         formatted_entry["word"] = entry.get("word", "")
         formatted_entry["part of speech"] = entry.get("partOfSpeech", "")
+        formatted_entry["translation"] = entry.get("google_translation", "")
         formatted_entry["plural"] = [
             f"{el.get('word', '')} ({el.get('tags', '')})"
             for el in entry.get("plural", "")
