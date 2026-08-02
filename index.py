@@ -1,20 +1,22 @@
+import argparse
 import sys
 
-from parser import GetFetchedTranscriptFromFile
-from _dictionary import GetDutchWordEntry
-from _translation import translate_text
-import argparse
-from _csv_utils import TableIO
-from _helper import PromptUserWordSelection, FormatDictionaryEntries
-from _transcript import GetTranscriptString, ExtractListOfNewUniqueWords
 from youtube_transcript_api import YouTubeTranscriptApi
+
+from _csv_utils import TableIO
+from _deck import FillAnkiDeck
+from _dictionary import GetDutchWordEntry
+from _helper import FormatDictionaryEntries, PromptUserWordSelection
+from _transcript import ExtractListOfNewUniqueWords, GetTranscriptString
+from _translation import translate_text
+from parser import GetFetchedTranscriptFromFile
 
 # from youtube_transcript_api import FetchedTranscript
 # from youtube_transcript_api import FetchedTranscriptSnippet
 # from youtube_transcript_api.proxies import GenericProxyConfig
 # from youtube_transcript_api.proxies import WebshareProxyConfig
 
-FILE_NAME = "test.csv"
+FILE_NAME = "test"
 DEFAULT_SOURCE_LANGUAGE = "nl"
 
 ### Generic Proxy API setup
@@ -45,6 +47,13 @@ parser.add_argument(
     type=str,
     default=DEFAULT_SOURCE_LANGUAGE,
     help="A language you're translating from in in ISO 639-1 code ('nl', 'fr', etc.)",
+)
+parser.add_argument(
+    "-n",
+    "--name",
+    type=str,
+    default=FILE_NAME,
+    help="File name for both csv and apkg output (no extension)",
 )
 parser.add_argument(
     "-d",
@@ -90,7 +99,7 @@ else:
             print("Error: Missing video ID. Exiting script.")
             sys.exit()
 
-new_words = ExtractListOfNewUniqueWords(translation_input, FILE_NAME)
+new_words = ExtractListOfNewUniqueWords(translation_input, args.name)
 if not len(new_words):
     print("All inputs already exist in the table. Exiting script.")
     sys.exit()
@@ -129,5 +138,7 @@ if invalid_word_entries:
     )
 
 formatted_entries = FormatDictionaryEntries(valid_word_entries)
-table = TableIO("test.csv")
+table = TableIO(args.name + ".csv")
 table.writeRows(formatted_entries)
+
+FillAnkiDeck(args.name, args.language)

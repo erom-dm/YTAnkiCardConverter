@@ -1,5 +1,7 @@
 import string
+
 from youtube_transcript_api import FetchedTranscript
+
 from _csv_utils import TableIO
 
 
@@ -29,7 +31,7 @@ def ExtractListOfNewUniqueWords(transcript: str, file_name: str) -> set[str]:
     unique_words_from_transcript = set(
         [word.lower() for word in individual_words if word.isalpha()]
     )
-    table = TableIO(file_name)
+    table = TableIO(file_name + ".csv")
     table_words = [entry.get("word") for entry in table.readRows()]
     unique_and_filtered_words = [
         word for word in unique_words_from_transcript if word not in table_words

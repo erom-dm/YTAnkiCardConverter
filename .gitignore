@@ -1,4 +1,6 @@
 __pycache__/
+audio/
+venv/
 *.csv
 *.pyc
-__pycache__/parser.cpython-314.pyc
+*.apkg

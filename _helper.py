@@ -11,6 +11,10 @@ FIELD_NAMES = [
 ]
 
 
+def ArrToString(string_list: list[str]) -> str:
+    return str(string_list).translate(str.maketrans("", "", "[]'\""))
+
+
 def PromptUserWordSelection(word_list: list[str]) -> list[str] | None:
     """
     Prompts user to select words for import with interactive questionaire
@@ -39,12 +43,14 @@ def FormatDictionaryEntries(entries: list[dict]) -> list[dict[str:str]]:
         formatted_entry["word"] = entry.get("word", "")
         formatted_entry["part of speech"] = entry.get("partOfSpeech", "")
         formatted_entry["translation"] = entry.get("google_translation", "")
-        formatted_entry["plural"] = [
-            f"{el.get('word', '')} ({el.get('tags', '')})"
-            for el in entry.get("plural", "")
-        ]
-        formatted_entry["definitions"] = definitions
-        formatted_entry["examples"] = examples
+        formatted_entry["plural"] = ArrToString(
+            [
+                f"{el.get('word', '')} ({el.get('tags', '')})"
+                for el in entry.get("plural", "")
+            ]
+        )
+        formatted_entry["definitions"] = ArrToString(definitions)
+        formatted_entry["examples"] = ArrToString(examples)
         formatted_entry["source"] = entry.get("source", "")
         formatted_entries.append(formatted_entry)
     return formatted_entries

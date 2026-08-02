@@ -1,6 +1,6 @@
-import requests
-from pprint import pprint
 import urllib.parse
+
+import requests
 
 URL = "https://freedictionaryapi.com/api/v1/entries"
 TRANSLATION = "?translations=true"
