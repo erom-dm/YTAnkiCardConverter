@@ -12,7 +12,7 @@ FIELD_NAMES = [
 
 
 def ArrToString(string_list: list[str]) -> str:
-    return str(string_list).translate(str.maketrans("", "", "[]'\""))
+    return str(string_list).translate(str.maketrans("", "", "[]'\"")).replace(",", ";")
 
 
 def PromptUserWordSelection(word_list: list[str]) -> list[str] | None:
@@ -35,7 +35,7 @@ def FormatDictionaryEntries(entries: list[dict]) -> list[dict[str:str]]:
     for entry in entries:
         definitions = []
         examples = []
-        for sense in entry.get("senses"):
+        for sense in entry.get("senses", {}):
             definitions.append(sense.get("definition", ""))
             examples.append(sense.get("examples", ""))
 

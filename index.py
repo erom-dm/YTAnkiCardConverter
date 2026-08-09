@@ -16,7 +16,7 @@ from parser import GetFetchedTranscriptFromFile
 # from youtube_transcript_api.proxies import GenericProxyConfig
 # from youtube_transcript_api.proxies import WebshareProxyConfig
 
-FILE_NAME = "test"
+FILE_NAME = "deck_1"
 DEFAULT_SOURCE_LANGUAGE = "nl"
 
 ### Generic Proxy API setup
@@ -56,10 +56,16 @@ parser.add_argument(
     help="File name for both csv and apkg output (no extension)",
 )
 parser.add_argument(
+    "-s",
+    "--single",
+    action="store_true",
+    help="A single word input mode, that bypasses YouTube transcript download and word selection",
+)
+parser.add_argument(
     "-d",
     "--direct",
-    action="store_true",
-    help="A direct word imput mode, that bypasses YouTube transcript download and word selection",
+    type=str,
+    help="Provide a single word/phrase as an argument",
 )
 parser.add_argument(
     "-t",
@@ -73,8 +79,10 @@ args = parser.parse_args()
 # video_id = "J2y1wVCD9hI"
 # pprint(raw_transcript_string, indent=2, width=40)
 
-if args.direct:
+if args.single:
     translation_input = input("Please provide a word or a phrase: ")
+elif args.direct:
+    translation_input = args.direct
 elif args.test:
     translation_input = GetTranscriptString(GetFetchedTranscriptFromFile())
 else:
@@ -99,19 +107,24 @@ else:
             print("Error: Missing video ID. Exiting script.")
             sys.exit()
 
-new_words = ExtractListOfNewUniqueWords(translation_input, args.name)
+if args.single or args.direct:
+    new_words = [translation_input]
+else:
+    new_words = ExtractListOfNewUniqueWords(translation_input, args.name)
 if not len(new_words):
     print("All inputs already exist in the table. Exiting script.")
     sys.exit()
 
-if args.direct:
+if args.single or args.direct:
     user_approved_words = new_words
 else:
     user_approved_words = PromptUserWordSelection(new_words)
 
 if user_approved_words:
     google_translations = translate_text(user_approved_words, args.language)
-    word_entries = [GetDutchWordEntry(word) for word in user_approved_words]
+    word_entries = [
+        GetDutchWordEntry(word, args, args.language) for word in user_approved_words
+    ]
 else:
     print("No words approved for import. Exiting script.")
     sys.exit()
@@ -119,15 +132,15 @@ else:
 valid_word_entries = []
 invalid_word_entries = []
 for entry in word_entries:
-    if len(entry["senses"]):
-        g_translation = next(
-            (
-                el["translatedText"]
-                for el in google_translations
-                if el["input"] == entry["word"]
-            ),
-            None,
-        )
+    g_translation = next(
+        (
+            el["translatedText"]
+            for el in google_translations
+            if el["input"] == entry["word"]
+        ),
+        None,
+    )
+    if args.single or args.direct or len(entry["senses"]):
         valid_word_entries.append({**entry, "google_translation": g_translation})
     else:
         invalid_word_entries.append(entry)

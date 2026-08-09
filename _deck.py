@@ -35,8 +35,92 @@ CSS = """
 hr { border: 0; height: 1px; background: #00ecfa; margin: 15px 0; }
 """
 
-# Bidirectional Model 1
 MODEL_STANDARD_BIDIRECTIONAL = genanki.Model(
+    1087777856,  # Unique Model ID
+    "Standard Bidirectional Vocab",
+    fields=FIELDS,
+    templates=[
+        # --- CARD 1: Word -> Translation (Recognition) ---
+        {
+            "name": "Recognition (Word -> Translation)",
+            "qfmt": """
+                <div class="word">{{Word}}</div>
+                 {{#Examples}}
+                    <div class="section-title">Examples</div>
+                    <div class="example split-list">{{Examples}}</div>
+                {{/Examples}}
+                <div>{{Audio}}</div>
+            """,
+            "afmt": """
+                <div class="word">{{Word}}</div>
+                {{#Examples}}
+                    <div class="section-title">Examples</div>
+                    <div class="example split-list">{{Examples}}</div>
+                {{/Examples}}
+                <div>{{Audio}}</div>
+                <hr>
+                <div class="translation">{{Translation}}</div>
+                {{#POS}}<div class="pos">({{POS}})</div>{{/POS}}
+                {{#Plural}}<div class="plural"><b>Plural:</b> {{Plural}}</div>{{/Plural}}
+                
+                {{#Definitions}}
+                    <div class="section-title">Definition</div>
+                    <div class="definition split-list">{{Definitions}}</div>
+                {{/Definitions}}
+                
+                {{#Source}}
+                    <a href={{Source}}>Source</a>
+                {{/Source}}
+                <script>
+                    (function renderSplitLists() {
+                        const elements = document.querySelectorAll('.split-list');
+
+                        elements.forEach(container => {
+                            const rawText = container.textContent;
+                            if (!rawText.trim() || container.dataset.processed === "true") return;
+                            const items = rawText.split(';')
+                                                .map(item => item.trim())
+                                            .filter(Boolean);
+                            container.innerHTML = items
+                                .map(item => `<div class="list-item">${item}</div>`)
+                                .join('');
+                            container.dataset.processed = "true";
+                        });
+                    })();
+                </script>
+            """,
+        },
+        # --- CARD 2: Translation -> Word (Production) ---
+        {
+            "name": "Production (Translation -> Word)",
+            "qfmt": """
+                <div class="translation">{{Translation}}</div>
+                {{#POS}}<div class="pos">({{POS}})</div>{{/POS}}
+            """,
+            "afmt": """
+                <div class="translation">{{Translation}}</div>
+                {{#POS}}<div class="pos">({{POS}})</div>{{/POS}}
+                <hr>
+                <div class="word">{{Word}}</div>
+                <div>{{Audio}}</div>
+                {{#Plural}}<div class="plural"><b>Plural:</b> {{Plural}}</div>{{/Plural}}
+                
+                {{#Examples}}
+                    <div class="section-title">Example</div>
+                    <div class="example">{{Examples}}</div>
+                {{/Examples}}
+                
+                {{#Source}}
+                    <a href={{Source}}>Source</a>
+                {{/Source}}
+            """,
+        },
+    ],
+    css=CSS,
+)
+
+# Bidirectional Model 1
+OLD_MODEL = genanki.Model(
     1087777856,  # Unique Model ID
     "Standard Bidirectional Vocab",
     fields=FIELDS,
@@ -89,13 +173,7 @@ MODEL_STANDARD_BIDIRECTIONAL = genanki.Model(
                 <hr>
                 <div class="word">{{Word}}</div>
                 <div>{{Audio}}</div>
-                {{#Plural}}<div class="plural"><b>Plural:</b> {{Plural}}</div>{{/Plural}}
-                
-                {{#Examples}}
-                    <div class="section-title">Example</div>
-                    <div class="example">{{Examples}}</div>
-                {{/Examples}}
-                
+       
                 {{#Source}}<div class="source">Src: {{Source}}</div>{{/Source}}
             """,
         },

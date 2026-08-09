@@ -6,12 +6,26 @@ URL = "https://freedictionaryapi.com/api/v1/entries"
 TRANSLATION = "?translations=true"
 
 
-def GetDutchWordEntry(word: str, language: str = "nl"):
+def GetDutchWordEntry(
+    word: str,
+    args,
+    language: str = "nl",
+):
     """
     Requests Dutch word entry from freedictionary. 1000 requests per day rate limit.
     """
+    word_to_check = word
+    if (args.direct or args.single) and language == "nl":
+        prefixes = ["het ", "de "]
+        for prefix in prefixes:
+            if prefix in word:
+                word_to_check = word.replace(prefix, "")
+                break
+
     try:
-        formattedURL = f"{URL}/{language}/{urllib.parse.quote(word)}{TRANSLATION}"
+        formattedURL = (
+            f"{URL}/{language}/{urllib.parse.quote(word_to_check)}{TRANSLATION}"
+        )
         response = requests.get(formattedURL)
         response.raise_for_status()
         data = response.json()
@@ -24,7 +38,7 @@ def GetDutchWordEntry(word: str, language: str = "nl"):
     if len(entries):
         entry = entries[0]
         return {
-            "word": data.get("word"),
+            "word": word,
             "partOfSpeech": entry.get("partOfSpeech"),
             "plural": [
                 item for item in entry.get("forms") if "plural" in item.get("tags")
@@ -36,4 +50,4 @@ def GetDutchWordEntry(word: str, language: str = "nl"):
             "source": data.get("source").get("url"),
         }
     else:
-        return {"word": data.get("word"), "senses": []}
+        return {"word": word, "senses": []}
